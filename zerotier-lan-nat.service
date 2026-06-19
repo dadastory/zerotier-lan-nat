@@ -1,0 +1,14 @@
+[Unit]
+Description=ZeroTier to LAN NAT router
+Wants=network-online.target
+After=network-online.target docker.service ufw.service zerotier-one.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+EnvironmentFile=-/etc/default/zerotier-lan-nat
+ExecStart=/opt/docker/zerotier-lan-nat/zerotier-lan-nat.sh start
+ExecStop=/opt/docker/zerotier-lan-nat/zerotier-lan-nat.sh stop
+
+[Install]
+WantedBy=multi-user.target

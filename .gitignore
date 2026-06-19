@@ -1,0 +1,11 @@
+# Local machine-specific configuration
+routes.conf
+*.local
+.env
+
+# Editor and temporary files
+*.bak
+*.tmp
+*.swp
+*~
+.DS_Store

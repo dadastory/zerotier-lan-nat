@@ -1,0 +1,4 @@
+# ZeroTier interface and subnet. One route per line.
+# Do not put secrets here; copy this file to routes.conf and edit locally.
+# Example:
+# ztxxxxxxxx 10.147.17.0/24
