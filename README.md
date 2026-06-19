@@ -28,23 +28,21 @@ Local LAN
         +-- Other LAN devices
 ```
 
-## 不要提交真实配置
+## 配置文件
 
-`routes.conf` 是本机真实配置文件，已被 `.gitignore` 忽略，不应该提交到公开仓库。
-
-仓库里只保留：
+项目提供示例配置文件：
 
 ```text
 routes.conf.example
 ```
 
-新机器部署时复制一份：
+部署时复制一份作为运行配置：
 
 ```bash
 cp routes.conf.example routes.conf
 ```
 
-然后把里面的示例网卡和网段改成自己的真实值。
+然后根据当前服务器的 ZeroTier 网卡和网段修改 `routes.conf`。
 
 ## ZeroTier Central 配置
 
@@ -69,8 +67,8 @@ Via:         10.147.17.53
 ```text
 /opt/docker/zerotier-lan-nat/
 ├── README.md                 本文档
-├── routes.conf.example       示例配置，适合提交
-├── routes.conf               本机真实配置，不提交
+├── routes.conf.example       示例配置
+├── routes.conf               运行配置
 ├── zerotier-lan-nat.sh       主脚本，负责添加/删除/应用 NAT 规则
 ├── install.sh                安装 systemd 服务并启动
 ├── uninstall.sh              卸载 systemd 服务并清理 NAT 规则
